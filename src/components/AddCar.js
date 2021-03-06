@@ -40,11 +40,20 @@ const AddCar = (props) => {
 
   return(
     <div>
-      <Button style={{margin: 10}} variant='contained' color='secondary' onClick={handleClickOpen}>
+      <Button
+        style={{margin: 10}}
+        variant='contained'
+        color='secondary'
+        onClick={handleClickOpen}
+      >
         Add car
       </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
-        <DialogTitle id='form-dialog-title'>New car</DialogTitle>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='form-dialog-title'
+      >
+        <DialogTitle id='form-dialog-title'> New car </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus

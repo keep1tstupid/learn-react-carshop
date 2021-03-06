@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css'
 import Button from '@material-ui/core/Button';
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from 'react-csv';
 import AddCar from './AddCar';
 import EditCar from './EditCar';
 
@@ -29,7 +29,6 @@ const CarList = () => {
       .catch(err => console.error(err));
   }
 
-
   const deleteCar = (link) => {
     if (window.confirm('Are you sure?')){
       fetch(link, {method: 'DELETE'})
@@ -50,18 +49,18 @@ const CarList = () => {
       .catch(err => console.log(err));
   }
 
+  // data for uploading csv
   const data = cars;
-
   const headers = [
-    { label: "Brand", key: "brand" },
-    { label: "Model", key: "model" },
-    { label: "Color", key: "color" },
-    { label: "Fuel", key: "fuel" },
-    { label: "Year", key: "year" },
-    { label: "Price", key: "price" },
+    { label: 'Brand', key: 'brand' },
+    { label: 'Model', key: 'model' },
+    { label: 'Color', key: 'color' },
+    { label: 'Fuel', key: 'fuel' },
+    { label: 'Year', key: 'year' },
+    { label: 'Price', key: 'price' },
   ];
 
-
+  // data for table
   const columns = [
     {
       Header: 'Brand',
@@ -101,9 +100,9 @@ const CarList = () => {
       accessor: '_links.self.href',
       Cell: row =>
         <Button
-          size="small"
-          variant="contained"
-          color="secondary"
+          size='small'
+          variant='contained'
+          color='secondary'
           onClick={() => deleteCar(row.value)}> Delete </Button>,
       sortable: false,
       filterable: false,

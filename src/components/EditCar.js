@@ -35,7 +35,7 @@ const EditCar = (props) => {
     setOpen(false);
   };
 
-  const handleInputChange= (event) => {
+  const handleInputChange = (event) => {
     setCar({...car, [event.target.name]:event.target.value })
   }
 
@@ -47,65 +47,73 @@ const EditCar = (props) => {
 
   return(
     <div>
-      <Button variant="contained" size="small" color="primary" onClick={handleClickOpen}>
+      <Button variant='contained'
+              size='small'
+              color='primary'
+              onClick={handleClickOpen}
+      >
         Edit
       </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Edit car</DialogTitle>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='form-dialog-title'
+      >
+        <DialogTitle id='form-dialog-title'> Edit car </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
-            margin="dense"
-            name="brand"
+            margin='dense'
+            name='brand'
             value={car.brand}
-            label="Brand"
+            label='Brand'
             onChange={event => handleInputChange(event)}
             fullWidth
           />
           <TextField
-            margin="dense"
-            name="model"
+            margin='dense'
+            name='model'
             value={car.model}
-            label="Model"
+            label='Model'
             onChange={event => handleInputChange(event)}
             fullWidth
           />
           <TextField
-            margin="dense"
-            name="color"
+            margin='dense'
+            name='color'
             value={car.color}
-            label="Color"
+            label='Color'
             onChange={event => handleInputChange(event)}
             fullWidth
           />
           <TextField
-            margin="dense"
-            name="fuel"
+            margin='dense'
+            name='fuel'
             value={car.fuel}
-            label="Fuel"
+            label='Fuel'
             onChange={event => handleInputChange(event)}
             fullWidth
           />
           <TextField
-            margin="dense"
-            name="year"
+            margin='dense'
+            name='year'
             value={car.year}
-            label="Year"
+            label='Year'
             onChange={event => handleInputChange(event)}
             fullWidth
           />
           <TextField
-            margin="dense"
-            name="price"
+            margin='dense'
+            name='price'
             value={car.price}
-            label="Price"
+            label='Price'
             onChange={event => handleInputChange(event)}
             fullWidth
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary"> Cancel </Button>
-          <Button onClick={updateCar} color="primary"> Save </Button>
+          <Button onClick={handleClose} color='primary'> Cancel </Button>
+          <Button onClick={updateCar} color='primary'> Save </Button>
         </DialogActions>
       </Dialog>
     </div>
